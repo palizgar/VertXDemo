@@ -6,20 +6,15 @@ import io.vertx.ext.web.client.HttpResponse;
 public class ReportModule {
   private int totalSize = 0;
 
-  public void generate(WebUrl url, HttpResponse<Buffer> response) {
+  public String generate(WebUrl url, HttpResponse<Buffer> response) {
     /*
-     * Writing the response details to the console
+     * Generates the response details
      */
-    System.out.println(
-        "Received response from url: "
-            + url.getAddress()
-            + " /status code: "
+    return
+        " /status code: "
             + response.statusCode()
             + " /body Size: "
-            + getResponseSize(response, url)
-            + " /"
-            + Thread.currentThread().getName().toUpperCase());
-    totalSize += url.getSize();
+            + getResponseSize(response, url);
   }
 
   private int getResponseSize(HttpResponse<Buffer> response, WebUrl url) {

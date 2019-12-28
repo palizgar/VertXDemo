@@ -1,6 +1,6 @@
 package com.demo.vertx;
 
-public class WebUrl {
+public class WebUrl  {
   private String address;
   private int size = 0;
 
